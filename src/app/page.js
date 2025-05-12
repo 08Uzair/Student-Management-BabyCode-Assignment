@@ -206,12 +206,22 @@ export default function App() {
                 <h2 className="text-base md:text-lg font-semibold text-gray-700">
                   Result List
                 </h2>
-                <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium shadow"
-                  onClick={() => setShowModal(true)}
-                >
-                  + Create
-                </button>
+                {user ? (
+                  <>
+                    <button
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium shadow"
+                      onClick={() => setShowModal(true)}
+                    >
+                      + Create
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium shadow">
+                      To Create, Please Login
+                    </button>{" "}
+                  </>
+                )}
               </div>
 
               {/* Modal */}
